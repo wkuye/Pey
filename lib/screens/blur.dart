@@ -56,7 +56,7 @@ class _BlurrWidgetState extends State<BlurrWidget> {
                 totalDuration: const Duration(seconds: 3),
                 halfwayCallback: () {
                 
-                  context.read<SplashBloc>().add(Done());
+                 context.read<SplashBloc>().add(Done());
                 },
                 color: const Color(progressBarColor),
                 backgroundColor: const Color(progressBarBackgroundColor),
