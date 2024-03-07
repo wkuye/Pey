@@ -50,6 +50,8 @@ Route::get('{userId}/{dateRange}', [TransactionController::class, 'getTransactio
      Route::group(['prefix'=>'subcategory'], function(){
         Route::get('/getsub', [SubCategoryController::class, 'getSubCategory']);
         Route::get('/get1st', [SubCategoryController::class, 'FirstSubCategory']);
+        Route::get('/get2nd', [SubCategoryController::class, 'SecondSubCategory']);
+        Route::get('/get3rd', [SubCategoryController::class, 'ThirdSubCategory']);
      });
      Route::group(['prefix'=>'popular'], function(){
       Route::get('/getpopular', [PopularController::class, 'getALLPopular']);

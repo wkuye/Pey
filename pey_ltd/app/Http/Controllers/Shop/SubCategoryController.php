@@ -13,4 +13,13 @@ class SubCategoryController extends Controller{
         $item= Item::where(['category_id'=> 2, 'discounted_price'=>70])->take(10)->get();
         return response()->json(['item'=>$item],200);
     }
+    protected function SecondSubCategory(){
+        $item= Item::where(['category_id'=> 1, 'discounted_price'=>70])->take(10)->get();
+        return response()->json(['item'=>$item],200);
+    }
+    protected function thirdSubCategory(){
+
+    $item= Item::where(['category_id'=> 4, 'discounted_price'=>70])->take(10)->get();
+        return response()->json(['item'=>$item],200);
+    }
 }

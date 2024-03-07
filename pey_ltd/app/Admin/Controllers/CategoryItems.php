@@ -98,10 +98,12 @@ class CategoryItems extends Controller{
     
        
         $item = new Item;
+        $popular= new Popular;
         $item->fill($categoryData);
-    
+      $popular->fill($categoryData);
 
         $item->save();
+        $popular->save();
     
         return redirect('admin/items');
     }
