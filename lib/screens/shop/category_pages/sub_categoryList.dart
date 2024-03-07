@@ -1,6 +1,8 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:pey_ltd_mobile/api/http_request/getSubCategories.dart';
 import 'package:pey_ltd_mobile/api/models/subCategoryModel.dart';
+import 'package:pey_ltd_mobile/screens/shop/category_pages/sub_categoryindexContainer.dart';
 import 'package:pey_ltd_mobile/utility/subCategoryContainer.dart';
 
 class SubCategoryList extends StatefulWidget {
@@ -14,7 +16,8 @@ class SubCategoryList extends StatefulWidget {
     super.key,
     required this.size,
     required this.controller,
-    required this.subCategoryFuture, required this.theme,
+    required this.subCategoryFuture,
+    required this.theme,
   });
 
   @override
@@ -47,15 +50,46 @@ class _SubCategoryListState extends State<SubCategoryList> {
                         itemCount: SubCategoryList.length,
                         itemBuilder: (subcontext, index) {
                           final subCategory = SubCategoryList[index];
-                          return SubCategoryContainer(
+                          return GestureDetector(
+                            onTap: () {
+                              if (index == 0) {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            SubCategoryIndexContainer(
+                                                future: SubCategoryRequest()
+                                                    .get1stSubCategory())));
+                              } else if (index == 1) {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            SubCategoryIndexContainer(
+                                                future: SubCategoryRequest()
+                                                    .get2ndSubCategory())));
+                              } else if (index == 2) {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            SubCategoryIndexContainer(
+                                                future: SubCategoryRequest()
+                                                    .get3rdSubCategory())));
+                              }
+                            },
+                            child: SubCategoryContainer(
                               size: widget.size,
                               image: subCategory.image,
                               name: subCategory.name,
                               description1: subCategory.description1,
-                              description2: subCategory.description2, theme: widget.theme,);
+                              description2: subCategory.description2,
+                              theme: widget.theme,
+                            ),
+                          );
                         })),
                 Positioned(
-                  top: widget.size.height/6,
+                  top: widget.size.height / 6,
                   right: 0,
                   left: 0,
                   child: DotsIndicator(
