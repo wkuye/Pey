@@ -32,11 +32,19 @@ class OutFit extends StatelessWidget {
                         ),
                     itemBuilder: (context, index) {
                       final allPopularItem = popularList[index];
+                          final price = double.parse(allPopularItem.price);
+
+                        final discountPrice =
+                            double.parse(allPopularItem.discount);
+
+                        final discountedPrice = price -
+                            (price * discountPrice/100); 
+                        print(discountedPrice);
                       return PopularGrid(
                         popular: allPopularItem,
                         themeBool: themeBool,
                         theme: themeData,
-                        index: index > 2 && index.isOdd,
+                        index: index > 2 && index.isOdd, discountPrice: discountedPrice.toStringAsFixed(2),
                       );
                     }
             );

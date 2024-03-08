@@ -1,6 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:pey_ltd_mobile/api/models/itemModel.dart';
+import 'package:pey_ltd_mobile/constant/strings.dart';
 import 'package:pey_ltd_mobile/utility/item_grid.dart';
 import 'package:pey_ltd_mobile/utility/popular_grid.dart';
 
@@ -15,7 +16,14 @@ class SubCategoryIndexContainer extends StatelessWidget {
     final themeBool = AdaptiveTheme.of(context).brightness == Brightness.light;
 
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+          backgroundColor: Color(onBoardingButtonColor),
+          title: Image(
+            image: AssetImage(pey),
+            color: theme.primaryColor,
+            height: 50,
+            width: 80,
+          )),
       body: Container(
           height: size.height,
           width: size.width,
@@ -39,11 +47,21 @@ class SubCategoryIndexContainer extends StatelessWidget {
                           ),
                       itemBuilder: (context, index) {
                         final allItem = itemList[index];
+                        final price = double.parse(allItem.price);
+
+                        final discountPrice =
+                            double.parse(allItem.discounted_price);
+
+                        final discountedPrice = price -
+                            (price * discountPrice/100); 
+             
                         return ItemGrid(
-                            items: allItem,
-                            themeBool: themeBool,
-                            index: index > 2 && index.isOdd,
-                            theme: theme);
+                          items: allItem,
+                          themeBool: themeBool,
+                          index: index > 2 && index.isOdd,
+                          theme: theme,
+                          discountPrice: discountedPrice.toStringAsFixed(2),
+                        );
                       });
                 }
                 return Container();

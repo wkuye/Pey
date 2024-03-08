@@ -3,17 +3,19 @@ import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:pey_ltd_mobile/api/models/popularModel.dart';
+import 'package:pey_ltd_mobile/constant/strings.dart';
 
 class PopularGrid extends StatelessWidget {
   final Popular popular;
   final bool themeBool;
   final bool index;
   final ThemeData theme;
+    final String discountPrice;
   const PopularGrid(
       {super.key,
       required this.popular,
       required this.themeBool,
-      required this.theme, required this.index});
+      required this.theme, required this.index, required this.discountPrice});
 
   @override
   Widget build(BuildContext context) {
@@ -49,12 +51,40 @@ class PopularGrid extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 3),
-                      child: Text(
-                        popular.price,
-                        style: TextStyle(
-                            color: theme.primaryColor,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold),
+                      child:  popular.discount=='0.00'? Text(
+                            popular.price,
+                            style: TextStyle(
+                                color: theme.primaryColor,
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold),
+                          ): Row(
+                        children: [
+                          Text(
+                            popular.price,
+                            style: TextStyle(
+                                color: theme.primaryColor,
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold),
+                          ),
+                                                    const SizedBox(width: 4,),
+                                                    
+                          Container(
+                            height: size.height/42,
+                            width: size.width/12,
+                            color: const Color(onBoardingButtonColor).withOpacity(0.4),
+                            child: Center(
+                              child: Text('-${double.parse(popular.discount).toInt()}%',style: const TextStyle(fontSize: 12),),
+                            ),
+                          ),
+                          const Spacer(),
+                          Text(
+                            discountPrice.toString(),
+                            style: TextStyle(
+                                color: theme.primaryColor,
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
                     ),
                   ],
