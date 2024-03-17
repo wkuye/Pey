@@ -6,8 +6,8 @@ import 'package:pey_ltd_mobile/utility/popular_grid.dart';
 class OutFit extends StatelessWidget {
    final bool themeBool;
   final ThemeData themeData;
-  final ScrollController controller;
-  const OutFit({super.key, required this.themeBool, required this.themeData, required this.controller});
+
+  const OutFit({super.key, required this.themeBool, required this.themeData,});
 
   @override
   Widget build(BuildContext context) {

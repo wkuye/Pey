@@ -64,6 +64,7 @@ class PopularGrid extends StatelessWidget {
                             style: TextStyle(
                                 color: theme.primaryColor,
                                 fontSize: 12,
+                                 decoration: TextDecoration.lineThrough,
                                 fontWeight: FontWeight.bold),
                           ),
                                                     const SizedBox(width: 4,),

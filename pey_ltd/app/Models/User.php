@@ -70,4 +70,8 @@ public function receivedTransfers()
 {
     return $this->hasMany(Transaction::class, 'recipient_id');
 }
+public function carts()
+{
+    return $this->hasMany(carts::class, 'product_id');
+}
 }

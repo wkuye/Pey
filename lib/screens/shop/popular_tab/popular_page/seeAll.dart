@@ -7,8 +7,8 @@ import 'package:pey_ltd_mobile/screens/shop/popular_tab/furniture.dart';
 import 'package:pey_ltd_mobile/screens/shop/popular_tab/outfits.dart';
 
 class SeeAll extends StatefulWidget {
-  final ScrollController controller;
-  const SeeAll({super.key, required this.controller});
+ 
+  const SeeAll({super.key, });
 
   @override
   State<SeeAll> createState() => _SeeAllState();
@@ -158,19 +158,19 @@ class _SeeAllState extends State<SeeAll> with SingleTickerProviderStateMixin {
               All(
                   themeBool: themeBool,
                   themeData: theme,
-                  controller: widget.controller),
+               ),
               Electronics(
                   themeBool: themeBool,
                   themeData: theme,
-                  controller: widget.controller),
+                ),
               Furniture(
                   themeBool: themeBool,
                   themeData: theme,
-                  controller: widget.controller),
+             ),
               OutFit(
                   themeBool: themeBool,
                   themeData: theme,
-                  controller: widget.controller),
+                  ),
             ],
           ),
         ),

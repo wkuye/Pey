@@ -212,6 +212,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "palette_generator",
+      "rootUri": "file:///Users/olawalekuye/.pub-cache/hosted/pub.dev/palette_generator-0.3.3+3",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "path",
       "rootUri": "file:///Users/olawalekuye/.pub-cache/hosted/pub.dev/path-1.8.3",
       "packageUri": "lib/",
@@ -434,7 +440,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-03-04T23:37:25.491431Z",
+  "generated": "2024-03-16T17:17:41.326990Z",
   "generator": "pub",
   "generatorVersion": "3.2.0"
 }

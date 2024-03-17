@@ -24,6 +24,7 @@ class CategoryItems extends Controller{
         $grid = new Grid(new Item);
         $grid->column('id', __('ID'))->sortable();
         $grid->column('category_id', __('CategoryID'))->sortable();
+       
         $grid->column('sub_category_id', __('SubCategoryID'))->sortable();
         $grid->column('created_at', __('Created at'));
         $grid->column('price', __('Price')); 

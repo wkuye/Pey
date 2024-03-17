@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+
 import 'package:pey_ltd_mobile/api/http_request/get_transaction.dart';
 import 'package:pey_ltd_mobile/api/models/transaction.dart';
 import 'package:pey_ltd_mobile/constant/strings.dart';

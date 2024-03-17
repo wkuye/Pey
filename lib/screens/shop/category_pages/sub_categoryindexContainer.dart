@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:pey_ltd_mobile/api/models/itemModel.dart';
 import 'package:pey_ltd_mobile/constant/strings.dart';
 import 'package:pey_ltd_mobile/utility/item_grid.dart';
-import 'package:pey_ltd_mobile/utility/popular_grid.dart';
 
 class SubCategoryIndexContainer extends StatelessWidget {
   final Future<List<dynamic>?> future;
@@ -17,9 +16,9 @@ class SubCategoryIndexContainer extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color(onBoardingButtonColor),
+          backgroundColor: const Color(onBoardingButtonColor),
           title: Image(
-            image: AssetImage(pey),
+            image: const AssetImage(pey),
             color: theme.primaryColor,
             height: 50,
             width: 80,
@@ -36,7 +35,7 @@ class SubCategoryIndexContainer extends StatelessWidget {
                   List<item> itemList =
                       itemLists!.map((json) => item.fromJson(json)).toList();
                   return GridView.builder(
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: itemList.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2, // Number of columns

@@ -7,6 +7,7 @@ import 'package:pey_ltd_mobile/api/http_request/currentUserRequest.dart';
 
 import 'package:pey_ltd_mobile/api/models/user.dart';
 import 'package:pey_ltd_mobile/bloc/addBeneficiary_bloc.dart';
+import 'package:pey_ltd_mobile/bloc/addToCartBloc.dart';
 import 'package:pey_ltd_mobile/bloc/alertDialogBloc.dart';
 
 import 'package:pey_ltd_mobile/bloc/auth_Bloc.dart';
@@ -26,6 +27,7 @@ import 'package:pey_ltd_mobile/screens/authScreens/forgot_screen.dart';
 import 'package:pey_ltd_mobile/screens/authScreens/login_screen.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:pey_ltd_mobile/screens/beneficiary/add_beneficiary.dart';
+import 'package:pey_ltd_mobile/utility/overview.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -133,6 +135,10 @@ class _MyAppState extends State<MyApp> {
                       BlocProvider(create: (context) => addBeneficiaryBloc())
                     ],
                     child: AddBeneficiary(),
+                  ),
+                   '/overview': (context) => BlocProvider(
+                    create: (context) => AddToCartBloc(),
+                    child: OverView(),
                   ),
               'pin_page': (context) => MultiBlocProvider(providers: [
                     BlocProvider(

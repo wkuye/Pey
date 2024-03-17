@@ -6,7 +6,7 @@ import 'package:pey_ltd_mobile/cache/shared_Preference.dart';
 
 import 'package:pey_ltd_mobile/constant/strings.dart';
 import 'package:pey_ltd_mobile/main.dart';
-import 'package:pey_ltd_mobile/screens/shop/main_shop.dart';
+
 
 class NewUserShop extends StatelessWidget {
   const NewUserShop({super.key});

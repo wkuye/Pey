@@ -50,19 +50,26 @@ class ItemGrid extends StatelessWidget {
                           fontSize: 12,
                           overflow: TextOverflow.ellipsis),
                     ),
-                    Padding(
+                  Padding(
                       padding: const EdgeInsets.symmetric(vertical: 3),
-                      child: Row(
+                      child:  items.discounted_price=='0.00'? Text(
+                            items.price,
+                            style: TextStyle(
+                                color: theme.primaryColor,
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold),
+                          ): Row(
                         children: [
                           Text(
                             items.price,
                             style: TextStyle(
                                 color: theme.primaryColor,
                                 fontSize: 12,
-                                decoration: TextDecoration.lineThrough,
+                                 decoration: TextDecoration.lineThrough,
                                 fontWeight: FontWeight.bold),
                           ),
-                          const SizedBox(width: 4,),
+                                                    const SizedBox(width: 4,),
+                                                    
                           Container(
                             height: size.height/42,
                             width: size.width/12,

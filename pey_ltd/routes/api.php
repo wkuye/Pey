@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\Beneficiary\BeneficiaryController;
+use App\Http\Controllers\Shop\CartController;
 use App\Http\Controllers\Shop\CategoryController;
 use App\Http\Controllers\Shop\SubCategoryController;
 use App\Http\Controllers\Transaction\TransactionController;
@@ -44,6 +45,12 @@ Route::get('{userId}/{dateRange}', [TransactionController::class, 'getTransactio
    });
    Route::group(['prefix'=>'category'], function(){
   Route::get('/get', [CategoryController::class, 'getCategory']);
+  Route::get('/first', [CategoryController::class, 'getFirstCategory']);
+  Route::get('/second', [CategoryController::class, 'getSecondCategory']);
+  Route::get('/third', [CategoryController::class, 'getThirdCategory']);
+  Route::get('/fourth', [CategoryController::class, 'getFourthCategory']);
+  Route::get('/fifth', [CategoryController::class, 'getFifthCategory']);
+  Route::post('/{id}/similar', [CategoryController::class, 'getSimilarProduct']);
   Route::get('/delete', [CategoryController::class, 'delete']);
   
      });
@@ -59,6 +66,10 @@ Route::get('{userId}/{dateRange}', [TransactionController::class, 'getTransactio
       Route::get('/getfurniture', [PopularController::class, 'getFurniturePopular']);
       Route::get('/getoutfit', [PopularController::class, 'getOutfitPopular']);
    });
+   Route::group(['prefix'=>'cart'], function(){
+      Route::post('/{userId}/add', [CartController::class, 'addItem']);
+     
+         });
 });
 
   

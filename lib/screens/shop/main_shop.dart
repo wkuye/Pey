@@ -13,7 +13,6 @@ import 'package:pey_ltd_mobile/screens/shop/popular_tab/outfits.dart';
 import 'package:pey_ltd_mobile/screens/shop/popular_tab/popular_page/seeAll.dart';
 import 'package:pey_ltd_mobile/utility/main_shopHeader.dart';
 import 'package:pey_ltd_mobile/utility/shopSearch.dart';
-import 'package:linked_scroll_controller/linked_scroll_controller.dart';
 
 class MyShop extends StatefulWidget {
   const MyShop({super.key});
@@ -25,7 +24,6 @@ class MyShop extends StatefulWidget {
 class _MyShopState extends State<MyShop> with AutomaticKeepAliveClientMixin {
   final PageController _controller = PageController();
   int index = 0;
-  final _controllerGroup = LinkedScrollControllerGroup();
 
   late Future<List<dynamic>?> _subCategoryFuture;
   @override
@@ -105,11 +103,7 @@ class _MyShopState extends State<MyShop> with AutomaticKeepAliveClientMixin {
                                     ),
                                   ),
                                   const Spacer(),
-                                  const Text(
-                                    'See all',
-                                    style: TextStyle(
-                                        color: Color(onBoardingButtonColor)),
-                                  ),
+                                 
                                 ],
                               ),
                               const SizedBox(height: 10),
@@ -135,7 +129,7 @@ class _MyShopState extends State<MyShop> with AutomaticKeepAliveClientMixin {
                                   ),
                                   const Spacer(),
                                   GestureDetector(
-                                    onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=> SeeAll(controller: _controllerGroup.addAndGet(),))),
+                                    onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=> SeeAll())),
                                     child: const Text(
                                       'See all',
                                       style: TextStyle(
@@ -264,16 +258,16 @@ class _MyShopState extends State<MyShop> with AutomaticKeepAliveClientMixin {
                               All(
                                   themeBool: themeBool,
                                   themeData: theme,
-                                  controller: _controllerGroup.addAndGet()),
+                                 ),
                               Electronics(themeBool: themeBool,
                                   themeData: theme,
-                                  controller: _controllerGroup.addAndGet()),
+                              ),
                               Furniture(  themeBool: themeBool,
                                   themeData: theme,
-                                  controller: _controllerGroup.addAndGet()),
+                                 ),
                               OutFit(themeBool: themeBool,
                                   themeData: theme,
-                                  controller: _controllerGroup.addAndGet()),
+                                  ),
                             ],
                           ),),)
                       ]
