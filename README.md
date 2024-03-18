@@ -1,16 +1,15 @@
 # pey_ltd_mobile
 
-A new Flutter project.
+The project includes the creation of a mobile app with the Flutter framework and Dart language, as well as an admin dashboard with the Laravel framework and PHP. MySQL is the database management system of choice.
+
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This flutter x Laravel project perform various tasks and access relevant information through the mobile app's intuitive and user-friendly interface. It makes use of the capabilities of Flutter and Dart to provide a smooth and engaging user experience.
 
-A few resources to get you started if this is your first Flutter project:
+The admin dashboard built with Laravel and PHP, on the other hand, provides advanced functionality and control for administrators. It allows them to efficiently manage user accounts, monitor app activity, generate reports, and perform administrative tasks.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+MySQL is used as the database system for the project to store and retrieve data for both the mobile app and the admin dashboard, ensuring data integrity and efficient data management.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The project is an Ecommerce Application where users can transfer money to their beneficiaries , friends and also shop for online commodities , it is built with smmoth designs and Ui along with Bloc as its state Management 
